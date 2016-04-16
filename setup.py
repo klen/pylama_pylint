@@ -68,7 +68,7 @@ setup(
     packages=find_packages(),
     package_data={'pylama_pylint': ['pylint.rc']},
     install_requires=[
-        l for l in _read('requirements.txt').split('\n')
+        l.replace('==', '>=') for l in _read('requirements.txt').split('\n')
         if l and not l.startswith('#')],
     tests_require=['pytest'],
     cmdclass={'test': __PyTest},
