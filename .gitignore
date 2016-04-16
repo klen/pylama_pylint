@@ -4,6 +4,7 @@
 /.eggs
 /.env
 /.ropeproject
+/.idea
 /build
 /dist
 /libs
