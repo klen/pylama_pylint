@@ -2,7 +2,6 @@
 import logging
 from os import path as op, environ
 
-from astroid import MANAGER
 from pylama.lint import Linter as BaseLinter
 from pylint.lint import Run
 from pylint.reporters import BaseReporter
@@ -27,8 +26,6 @@ class Linter(BaseLinter):
         :return list: List of errors.
         """
         logger.debug('Start pylint')
-
-        MANAGER.astroid_cache.clear()
 
         class Reporter(BaseReporter):
 
