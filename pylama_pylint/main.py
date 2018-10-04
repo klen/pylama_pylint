@@ -4,6 +4,7 @@ from os import path as op, environ
 
 from astroid import MANAGER
 from pylama.lint import Linter as BaseLinter
+from pylint.__pkginfo__ import numversion
 from pylint.lint import Run
 from pylint.reporters import BaseReporter
 
@@ -54,7 +55,11 @@ class Linter(BaseLinter):
 
         reporter = Reporter()
 
-        Run([path] + params.to_attrs(), reporter=reporter, exit=False)
+        kwargs = {
+            (numversion[0] == 1 and 'exit' or 'do_exit'): False
+        }
+
+        Run([path] + params.to_attrs(), reporter=reporter, **kwargs)
 
         return reporter.errors
 

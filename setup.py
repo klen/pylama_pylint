@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-""" Support pylint code checker.
+"""Support pylint code checker.
 
 pylama_pylint
 -------------
@@ -21,6 +21,7 @@ def _read(fname):
         return open(op.join(op.dirname(__file__), fname)).read()
     except IOError:
         return ''
+
 
 _meta = _read('pylama_pylint/__init__.py')
 _license = re.search(r'^__license__\s*=\s*"(.*)"', _meta, re.M).group(1)
@@ -43,11 +44,12 @@ class __PyTest(TestCommand):
         errno = pytest.main(self.test_args)
         sys.exit(errno)
 
+
 setup(
     name=_project,
     version=_version,
     license=_license,
-    description=_read('DESCRIPTION'),
+    description=_read('DESCRIPTION').strip(),
     long_description=_read('README.rst'),
     platforms=('Any'),
 

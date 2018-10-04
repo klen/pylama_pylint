@@ -11,7 +11,7 @@ def test_pylint():
     options = parse_options(linters=['pylint'], config=False)
     options.ignore = set(['R0912', 'C0111', 'I0011', 'F0401'])
     errors = run('dummy.py', options=options)
-    assert len(errors) == 3
+    assert len(errors) == 4
     assert errors[0].number == 'W0611'
 
     options.linters_params['pylint'] = dict(disable="W")
