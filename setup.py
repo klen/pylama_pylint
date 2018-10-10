@@ -62,11 +62,13 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
     ],
-    entry_points={
-        'pylama.linter': [
-            'pylint = pylama_pylint.main:Linter',
-        ],
-    },
+    # The project is depricated
+    # So do not need register this as pylama linter anymore
+    # entry_points={
+    #     'pylama.linter': [
+    #         'pylint = pylama_pylint.main:Linter',
+    #     ],
+    # },
     packages=find_packages(),
     package_data={'pylama_pylint': ['pylint.rc']},
     install_requires=[

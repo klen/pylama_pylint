@@ -1,6 +1,12 @@
 Pylama_pylint
 #############
 
+Deprication notes
+=================
+
+The project is depricated. Pylama_ has integrated Pylint_ support from version
+7.6.4 You do not need to install the plugin anymore.
+
 pylama-pylint -- Support Pylint_ in Pylama_.
 
 .. image:: http://img.shields.io/travis/klen/pylama_pylint.svg?style=flat-square
